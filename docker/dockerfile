@@ -1,0 +1,4 @@
+#Imagem criada apenas para a instalação do plugin que permite o delay das mensagens
+FROM rabbitmq:3-management
+COPY ./rabbitmq_delayed_message_exchange-3.8.9-0199d11c.ez /opt/rabbitmq/plugins/
+RUN rabbitmq-plugins enable rabbitmq_delayed_message_exchange

@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  rabbitMQ:
+    build: .
+    image: rabbitmq:3-management-custom
+    container_name: some-rabbit
+    hostname: my-rabbit
+    ports:
+     - "8090:15672"
+     - "5672:5672"
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root  
+      MYSQL_DATABASE: votacao-db   
+    ports:
+    - "3306:3306" 
